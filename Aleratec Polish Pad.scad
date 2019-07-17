@@ -4,14 +4,14 @@ $fn = 100;
 //s = 25.76 - 6;
 // main_d disk 47 
 d = 47; 
-pd = 6.3;
-s = (d/2) - pd+1.5;
+pd = 6.3 -1;
+s = 18.7;//(d/2) - pd+1.5;
 rotate = 365/3;
 cylinder(h=1,d=d,center=true);
 module post(){
   translate([s,0,0]) {
     cylinder(h=16,d=pd,center=false);
-     translate([3,-1,14]) #cube([1,2,1], center=false);
+     translate([2.5,-1,14]) #cube([.25,2,1], center=false);
     }
   }
 post();  

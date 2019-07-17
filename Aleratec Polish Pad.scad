@@ -8,7 +8,12 @@ pd = 6.3;
 s = (d/2) - pd+1.5;
 rotate = 365/3;
 cylinder(h=1,d=d,center=true);
-
-translate([s,0,0]) cylinder(h=16,d=pd,center=false);
-rotate([0,0,rotate]) translate([s,0,0]) cylinder(h=16,d=pd,center=false);
-rotate([0,0,-rotate]) translate([s,0,0]) cylinder(h=16,d=pd,center=false);
+module post(){
+  translate([s,0,0]) {
+    cylinder(h=16,d=pd,center=false);
+     translate([3,-1,14]) #cube([1,2,1], center=false);
+    }
+  }
+post();  
+rotate([0,0,rotate]) post();
+rotate([0,0,-rotate]) post();
